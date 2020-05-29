@@ -4,6 +4,7 @@ alias c='clear'
 alias g='git'
 alias k='kubectl'
 alias mk='minikube'
+alias kindnew='kind delete cluster && kind create cluster'
 alias drc='docker rm $(docker  ps -a -q)'
 alias dri='docker rmi $(docker  images)'
 export GOPATH=$HOME/go
