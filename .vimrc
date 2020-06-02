@@ -1,6 +1,6 @@
 syntax on
 
-set pastetoggle=F6
+set pastetoggle=<F6>
 
 set noshowmatch
 set nohlsearch
