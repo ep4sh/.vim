@@ -1,3 +1,10 @@
+" disable arrows
+"
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 syntax on
 
 set pastetoggle=<F6>
@@ -44,15 +51,14 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
-
+Plug 'preservim/nerdtree'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme happy_hacking
 set background=dark
 
 " go settings
@@ -98,7 +104,6 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 command CDC cd %:p:h
-nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader>+ :vertical resize +10<CR>
 nnoremap <Leader>- :vertical resize -10<CR>
@@ -121,21 +126,9 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-space> coc#refresh()
 
-" GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
-nnoremap <leader>cr :CocRestart
-
 " Sweet Sweet FuGITive
 nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
+nmap <leader>gd :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
 fun! TrimWhitespace()
@@ -146,4 +139,6 @@ endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
 
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
