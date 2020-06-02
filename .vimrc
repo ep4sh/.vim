@@ -111,7 +111,6 @@ nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kk
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap X "_d
-inoremap <C-c> <esc>
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -127,9 +126,12 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Sweet Sweet FuGITive
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gd :diffget //2<CR>
-nmap <leader>gs :G<CR>
+"nmap <leader>gh :diffget //3<CR>
+"nmap <leader>gd :diffget //2<CR>
+"nmap <leader>gs :G<CR>
+ nnoremap <leader>gd :Gdiff<CR>
+ nmap <leader>gs :G<CR>
+ nnoremap <leader>gc :Gcommit -v -q<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
