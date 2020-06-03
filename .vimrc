@@ -7,8 +7,8 @@ noremap <Right> <Nop>
 
 syntax on
 
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 set pastetoggle=<F6>
-
 set noshowmatch
 set nohlsearch
 set hidden
