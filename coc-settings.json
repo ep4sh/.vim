@@ -7,7 +7,7 @@
     },
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "disableWorkspaceFolders": true,
       "filetypes": ["go"]
     },
@@ -17,4 +17,5 @@
       "initializationOptions": {}
     }
   }
+
 }
