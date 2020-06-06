@@ -79,9 +79,9 @@ let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
 
-nnoremap <Leader>gor :GoRun <CR>
-nnoremap <Leader>god :GoDef <CR>
 
 " terraform setting
 "
@@ -116,6 +116,9 @@ nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kk
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap X "_d
+
+nnoremap <leader>r :GoRun<CR>
+nnoremap <leader>d :GoDef<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
