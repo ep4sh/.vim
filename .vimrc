@@ -59,6 +59,7 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme happy_hacking
+colorscheme nord
 set background=dark
 
 " go settings
