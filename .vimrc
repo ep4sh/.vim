@@ -50,7 +50,7 @@ Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+Plug 'vim-crystal/vim-crystal'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
@@ -59,7 +59,6 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme happy_hacking
-colorscheme nord
 set background=dark
 
 " go settings
