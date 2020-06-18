@@ -120,6 +120,12 @@ vnoremap X "_d
 nnoremap <leader>r :GoRun<CR>
 nnoremap <leader>d :GoDef<CR>
 
+" Crystal-lang maapings
+"
+nnoremap <leader>cf :CrystalFormat<CR>
+nnoremap <leader>cd :CrystalDef<CR>
+command CR !crystal run %
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
