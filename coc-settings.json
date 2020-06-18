@@ -1,4 +1,6 @@
 {
+  "python.jediEnabled": false,
+
   "languageserver": {
     "dockerfile": {
       "command": "docker-langserver",
