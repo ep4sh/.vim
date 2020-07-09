@@ -1,5 +1,6 @@
 stty icrnl
 alias python='python3'
+alias goo='googler'
 alias c='clear'
 alias g='git'
 alias k='kubectl'
