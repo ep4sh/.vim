@@ -6,7 +6,6 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 syntax on
-
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 set pastetoggle=<F6>
 set noshowmatch
@@ -109,6 +108,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <Leader>pw :set wrap!<CR>
 command CDC cd %:p:h
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader>+ :vertical resize +10<CR>
