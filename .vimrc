@@ -7,6 +7,7 @@ noremap <Right> <Nop>
 
 syntax on
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+:au BufNewFile, BufRead *.py
 set pastetoggle=<F6>
 set noshowmatch
 set nohlsearch
@@ -56,10 +57,32 @@ Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
 Plug 'preservim/nerdtree'
+"Plug 'vim-scripts/indentpython.vim'
+Plug 'klen/python-mode'
+Plug 'davidhalter/jedi-vim'
+Plug 'mitsuhiko/vim-jinja'
+Plug 'mitsuhiko/vim-python-combined'
+
 call plug#end()
 
 colorscheme happy_hacking
 set background=dark
+
+
+" python settings
+"
+let g:pymode_virtualenv_path = "venv"
+let g:pymode_virtualenv = 1
+let g:pymode_trim_whitespaces = 1
+let g:pymode_options = 1
+let g:pymode_indent = 1
+let g:pymode_doc = 1
+let g:pymode_doc_bind = 'K'
+let g:pymode_run_bind = '<leader>p'
+let g:pymode_syntax_all = 1
+let pymode_lint_on_fly = 1
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
 " go settings
 "
