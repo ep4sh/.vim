@@ -111,8 +111,8 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pw :set wrap!<CR>
 command CDC cd %:p:h
 nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader>+ :vertical resize +10<CR>
-nnoremap <Leader>- :vertical resize -10<CR>
+nnoremap <Leader>+ :vertical resize +20<CR>
+nnoremap <Leader>- :vertical resize -20<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
