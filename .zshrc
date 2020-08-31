@@ -9,6 +9,8 @@ alias kindnew='kind delete cluster && kind create cluster'
 alias drc='docker rm $(docker  ps -a -q)'
 alias dri='docker rmi $(docker  images)'
 alias bb='kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --'
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
 export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/.rvm/bin"
 export ZSH="$HOME/.oh-my-zsh"
