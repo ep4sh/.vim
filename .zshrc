@@ -1,6 +1,6 @@
 stty icrnl
 alias python='python3'
-alias goo='googler'
+alias g='googler'
 alias c='clear'
 alias g='git'
 alias k='kubectl'
@@ -8,6 +8,7 @@ alias mk='minikube'
 alias kindnew='kind delete cluster && kind create cluster'
 alias drc='docker rm $(docker  ps -a -q)'
 alias dri='docker rmi $(docker  images)'
+alias bb='kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --'
 export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/.rvm/bin"
 export ZSH="$HOME/.oh-my-zsh"
