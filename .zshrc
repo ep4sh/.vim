@@ -29,3 +29,4 @@ source $ZSH/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
