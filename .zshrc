@@ -1,5 +1,6 @@
 stty icrnl
 alias python='python3'
+alias t='terraform'
 alias g='googler'
 alias c='clear'
 alias g='git'
