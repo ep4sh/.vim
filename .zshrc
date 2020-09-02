@@ -14,6 +14,7 @@ export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/.rvm/bin"
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=linux
+export AWS_REGION=us-east-1
 
 tmuxssh () {ssh -t $1 tmux ;}
 cleartf () {fd .terragrunt-cache --type d --hidden --no-ignore --exec rm -rf}
