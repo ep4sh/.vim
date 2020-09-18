@@ -11,6 +11,7 @@ alias drc='docker rm $(docker  ps -a -q)'
 alias dri='docker rmi $(docker  images)'
 alias bb='kubectl run busybox --image=ep4sh/debug --rm -it --restart=Never --command --'
 alias bbq='kubectl run busybox --image=ep4sh/debug-sql --rm -it --restart=Never --command --'
+alias bba='kubectl run busybox --image=ep4sh/debug:arm --rm -it --restart=Never --command --'
 export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/.rvm/bin"
 export ZSH="$HOME/.oh-my-zsh"
