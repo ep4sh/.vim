@@ -19,7 +19,7 @@
   },
 
   "yaml.schemas": {
-    "kubernetes": "/*.yaml"
+    "kubernetes": "*.yaml"
     }
 
 }
