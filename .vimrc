@@ -51,7 +51,6 @@ Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-crystal/vim-crystal'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
@@ -60,6 +59,7 @@ Plug 'klen/python-mode'
 Plug 'davidhalter/jedi-vim'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'mitsuhiko/vim-python-combined'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -182,4 +182,5 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
+let g:NERDTreeDirArrowCollapsible='+'
+let g:NERDTreeDirArrowExpandable='|'
