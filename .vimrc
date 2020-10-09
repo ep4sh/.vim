@@ -7,6 +7,7 @@ noremap <Right> <Nop>
 
 syntax on
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
 set pastetoggle=<F6>
 set noshowmatch
@@ -26,6 +27,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
+set backspace=indent,eol,start
 set clipboard=unnamedplus,unnamed
 
 " Give more space for displaying messages.
@@ -60,11 +62,17 @@ Plug 'davidhalter/jedi-vim'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'mitsuhiko/vim-python-combined'
 Plug 'editorconfig/editorconfig-vim'
-
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 colorscheme happy_hacking
 set background=dark
+
+" latex settings
+"
+let g:livepreview_previewer = 'open -a Preview'
+nnoremap <Leader>pl :LLPStartPreview<CR>
+
 
 
 " python settings
