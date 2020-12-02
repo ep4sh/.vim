@@ -29,6 +29,7 @@ set incsearch
 set scrolloff=8
 set backspace=indent,eol,start
 set clipboard=unnamedplus,unnamed
+set autochdir
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -78,17 +79,21 @@ nnoremap <Leader>pl :LLPStartPreview<CR>
 " python settings
 "
 let g:pymode_virtualenv_path = "venv"
-let g:pymode_virtualenv = 1
+let g:pymode_virtualenv = 0
 let g:pymode_trim_whitespaces = 1
 let g:pymode_options = 1
 let g:pymode_indent = 1
 let g:pymode_doc = 1
 let g:pymode_doc_bind = 'K'
 let g:pymode_run_bind = '<leader>p'
-let g:pymode_syntax_all = 1
+let g:pymode_lint_write = 1
 let pymode_lint_on_fly = 1
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " go settings
 "
@@ -136,9 +141,9 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+let g:pymode_virtualenv = 0
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pw :set wrap!<CR>
-command CDC cd %:p:h
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader>+ :vertical resize +20<CR>
 nnoremap <Leader>- :vertical resize -20<CR>

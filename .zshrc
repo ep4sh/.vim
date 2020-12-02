@@ -25,7 +25,6 @@ rvme    () {source /$HOME/.rvm/scripts/rvm}
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
-
 ZSH_THEME="yuki"
 ZSH_DISABLE_COMPFIX=true
 
