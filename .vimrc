@@ -56,8 +56,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdtree'
-Plug 'klen/python-mode'
-Plug 'davidhalter/jedi-vim'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'mitsuhiko/vim-jinja'
 Plug 'editorconfig/editorconfig-vim'
 call plug#end()
@@ -76,11 +75,11 @@ let g:pymode_doc = 1
 let g:pymode_doc_bind = 'K'
 let g:pymode_run_bind = '<leader>p'
 let g:pymode_lint_write = 1
-let pymode_lint_on_fly = 0
+let pymode_lint_on_fly = 1
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
-let g:pymode_syntax = 0
-let g:pymode_syntax_all = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
 "let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 "let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
