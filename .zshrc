@@ -1,4 +1,5 @@
 stty icrnl
+alias kgpa='kubectl get pod --all-namespaces'
 alias vi='vim'
 alias python='python3'
 alias t='terraform'
