@@ -33,6 +33,7 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(vi-mode git docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zprofile
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
