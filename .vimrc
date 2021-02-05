@@ -190,5 +190,5 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-let g:NERDTreeDirArrowCollapsible='+'
-let g:NERDTreeDirArrowExpandable='|'
+let g:NERDTreeDirArrowCollapsible='-'
+let g:NERDTreeDirArrowExpandable='+'
