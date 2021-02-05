@@ -29,6 +29,7 @@ set incsearch
 set scrolloff=8
 set backspace=indent,eol,start
 set clipboard=unnamedplus,unnamed
+set autochdir
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -47,8 +48,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'tweekmonster/gofmt.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -57,23 +56,12 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdtree'
-Plug 'klen/python-mode'
-Plug 'davidhalter/jedi-vim'
-Plug 'mitsuhiko/vim-jinja'
-Plug 'mitsuhiko/vim-python-combined'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 colorscheme happy_hacking
 set background=dark
-
-" latex settings
-"
-let g:livepreview_previewer = 'open -a Preview'
-nnoremap <Leader>pl :LLPStartPreview<CR>
-
-
 
 " python settings
 "
@@ -85,10 +73,14 @@ let g:pymode_indent = 1
 let g:pymode_doc = 1
 let g:pymode_doc_bind = 'K'
 let g:pymode_run_bind = '<leader>p'
-let g:pymode_syntax_all = 1
-let pymode_lint_on_fly = 1
+let g:pymode_lint_write = 0
+let pymode_lint_on_fly = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " go settings
 "
@@ -136,9 +128,9 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+let g:pymode_virtualenv = 0
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pw :set wrap!<CR>
-command CDC cd %:p:h
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader>+ :vertical resize +20<CR>
 nnoremap <Leader>- :vertical resize -20<CR>

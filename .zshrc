@@ -1,4 +1,6 @@
 stty icrnl
+alias kgpa='kubectl get pod --all-namespaces'
+alias vi='vim'
 alias python='python3'
 alias t='terraform'
 alias g='googler'
@@ -25,13 +27,13 @@ rvme    () {source /$HOME/.rvm/scripts/rvm}
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
-
-ZSH_THEME="yuki"
+ZSH_THEME="fwalch"
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(vi-mode git docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zprofile
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

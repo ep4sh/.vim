@@ -6,9 +6,10 @@ Dot files I use everywhere
 ```
 cd ~
 git clone git@github.com:ep4sh/.vim.git ~/.vim
-ln -s ~/.vim/.zshrc .zshrc
-ln -s ~/.vim/.vimrc .vimrc
-ln -s ~/.vim/.gitconfig .gitconfig
+ln -sf ~/.vim/.zshrc .zshrc
+ln -sf ~/.vim/.vimrc .vimrc
+ln -sf ~/.vim/.gitconfig .gitconfig
+ln -sf ~/.vim/.fzf.zsh .fzf.zsh
 ```
 
 # Check lang-servers on coc-settings.json and install them
