@@ -6,6 +6,8 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 syntax on
+set foldmethod=indent
+
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
