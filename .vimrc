@@ -9,6 +9,7 @@ syntax on
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
+au BufNewFile,BufRead Jenkinsfile setf groovy
 set pastetoggle=<F6>
 set noshowmatch
 set nohlsearch
@@ -58,6 +59,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdtree'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-scripts/groovy.vim'
 call plug#end()
 
 colorscheme happy_hacking
