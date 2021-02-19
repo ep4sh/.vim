@@ -62,10 +62,15 @@ Plug 'preservim/nerdtree'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/groovy.vim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
-colorscheme happy_hacking
-set background=dark
+set t_Co=256
+"colorscheme happy_hacking
+"colorscheme nord
+colorscheme gruvbox
+set background=light
+
 
 " python settings
 "
