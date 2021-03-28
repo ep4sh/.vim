@@ -5,9 +5,9 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" General settings
 syntax on
 set foldmethod=indent
-
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
@@ -71,11 +71,24 @@ set t_Co=256
 colorscheme gruvbox
 set background=light
 
+" Coc setting
+"
+let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python']
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>ax <Plug>(coc-codeaction-line)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 
 " python settings
 "
 let g:pymode_virtualenv_path = "venv"
-let g:pymode_virtualenv = 1
+let g:pymode_virtualenv = 0
 let g:pymode_trim_whitespaces = 1
 let g:pymode_options = 1
 let g:pymode_indent = 1
@@ -111,6 +124,8 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
+nnoremap <leader>r :GoRun<CR>
+nnoremap <leader>d :GoDef<CR>
 
 
 " terraform setting
@@ -123,32 +138,23 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+" Hacks
 let loaded_matchparen = 1
 let mapleader = " "
-
-let g:netrw_browse_split = 2
-let g:vrfr_rg = 'true'
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-let g:pymode_virtualenv = 0
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pw :set wrap!<CR>
 nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader>+ :vertical resize +20<CR>
+nnoremap <Leader>= :vertical resize +20<CR>
 nnoremap <Leader>- :vertical resize -20<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <leader>r :GoRun<CR>
-nnoremap <leader>d :GoDef<CR>
 
 " Crystal-lang maapings
 "
@@ -172,27 +178,22 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-
-" Sweet Sweet FuGITive
-"nmap <leader>gh :diffget //3<CR>
-"nmap <leader>gd :diffget //2<CR>
-"nmap <leader>gs :G<CR>
- nnoremap <leader>gd :Gdiff<CR>
- nmap <leader>gs :G<CR>
- nnoremap <leader>gc :Gcommit -v -q<CR>
-
+" Removing whitespaces on save
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
-
 autocmd BufWritePre * :call TrimWhitespace()
 
+
+"NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeDirArrowExpandable='+'
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
 
 " show tab index
 set tabline=%!MyTabLine()  " custom tab pages line
