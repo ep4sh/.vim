@@ -38,3 +38,5 @@ source $HOME/.zprofile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="in:$PATH"
+export PATH="in:$PATH"
