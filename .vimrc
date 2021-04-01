@@ -66,10 +66,10 @@ Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 set t_Co=256
-"colorscheme happy_hacking
-colorscheme nord
-"colorscheme 3dglasses
-set background=light
+colorscheme happy_hacking
+"colorscheme nord
+"colorscheme SerialExperimentsLain
+set background=dark
 
 " Coc setting
 "
