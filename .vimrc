@@ -14,7 +14,7 @@ autocmd Filetype tex setl updatetime=1
 au BufNewFile,BufRead Jenkinsfile setf groovy
 set pastetoggle=<F6>
 set noshowmatch
-set nohlsearch
+set hlsearch
 set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
