@@ -20,7 +20,6 @@ set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
 set nu
 set nowrap
 set smartcase
@@ -50,9 +49,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tweekmonster/gofmt.vim'
 Plug 'mbbill/undotree'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -124,8 +124,12 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
-nnoremap <leader>r :GoRun<CR>
-nnoremap <leader>d :GoDef<CR>
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
 
 " terraform setting
@@ -140,6 +144,7 @@ endif
 
 " Hacks
 let loaded_matchparen = 1
+nnoremap <SPACE> <Nop>
 let mapleader = " "
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
