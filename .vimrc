@@ -52,7 +52,7 @@ Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tweekmonster/gofmt.vim'
 Plug 'mbbill/undotree'
-"Plug 'sheerun/vim-polyglot'
+Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
