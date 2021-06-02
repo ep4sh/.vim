@@ -66,10 +66,13 @@ Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 set t_Co=256
-colorscheme happy_hacking
+"colorscheme afterglow
+"colorscheme happy_hacking
 "colorscheme nord
 "colorscheme SerialExperimentsLain
-set background=dark
+colorscheme PaperColor
+set background=light
+"set background=dark
 
 " Coc setting
 "
@@ -106,6 +109,7 @@ let g:pymode_syntax_all = 1
 
 " go settings
 "
+let g:go_doc_popup_window = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
