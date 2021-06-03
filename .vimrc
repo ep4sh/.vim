@@ -133,7 +133,8 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>r  <Plug>(go-run-tab)
+autocmd FileType go nmap <leader>gl  <Plug>(go-lint)
 
 
 " terraform setting
