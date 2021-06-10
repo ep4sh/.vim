@@ -109,7 +109,6 @@ let g:pymode_syntax_all = 1
 
 " go settings
 "
-let g:go_doc_popup_window = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -133,8 +132,10 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run-tab)
+autocmd FileType go nmap <leader>r  <Plug>(go-run-vertical)
+autocmd FileType go nmap <leader>gg  <Plug>(go-doc-vertical)
 autocmd FileType go nmap <leader>gl  <Plug>(go-lint)
+autocmd FileType go nmap <leader>gv  <Plug>(go-vet)
 
 
 " terraform setting
