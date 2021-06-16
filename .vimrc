@@ -67,12 +67,12 @@ call plug#end()
 
 set t_Co=256
 "colorscheme afterglow
-"colorscheme happy_hacking
+colorscheme happy_hacking
 "colorscheme nord
 "colorscheme SerialExperimentsLain
-colorscheme PaperColor
-set background=light
-"set background=dark
+"colorscheme PaperColor
+"set background=light
+set background=dark
 
 " Coc setting
 "
@@ -133,7 +133,7 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run-vertical)
-autocmd FileType go nmap <leader>gg  <Plug>(go-doc-vertical)
+autocmd FileType go nmap <leader>gg  <Plug>(go-def-vertical)
 autocmd FileType go nmap <leader>gl  <Plug>(go-lint)
 autocmd FileType go nmap <leader>gv  <Plug>(go-vet)
 
