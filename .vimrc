@@ -63,6 +63,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'ollykel/v-vim'
 call plug#end()
 
 set t_Co=256
@@ -87,6 +88,28 @@ nmap <leader>ax <Plug>(coc-codeaction-line)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+
+" v settings
+"
+" Disable highlight white space after "[]".
+let g:v_highlight_array_whitespace_error = 0
+
+" Disable highlight white space around the communications operator that don't follow the standard style.
+let g:v_highlight_chan_whitespace_error = 1
+
+" Disable highlight instances of tabs following spaces.
+let g:v_highlight_space_tab_error = 1
+
+" Disable highlight trailing white space.
+let g:v_highlight_trailing_whitespace_error = 1
+
+" Disable highlight function calls.
+let g:v_highlight_function_calls = 1
+
+let g:v_highlight_fields = 1
+
+" Enable automatically formatting file via "v fmt -" before writing buffer.
+let g:v_autofmt_bufwritepre = 1
 
 " python settings
 "
