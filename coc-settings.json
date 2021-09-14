@@ -7,6 +7,11 @@
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
     },
+    "sql": {
+      "command": "sql-language-server",
+      "args" : ["up", "--method", "stdio"],
+      "filetypes": ["sql", "mysql"]
+    },
     "golang": {
       "command": "gopls",
       "filetypes": ["go"]
