@@ -12,6 +12,11 @@
       "args" : ["up", "--method", "stdio"],
       "filetypes": ["sql", "mysql"]
     },
+  "clangd": {
+    "command": "clangd",
+    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  },
     "golang": {
       "command": "gopls",
       "filetypes": ["go"]
