@@ -71,7 +71,8 @@ set t_Co=256
 "colorscheme happy_hacking
 "colorscheme nord
 "colorscheme SerialExperimentsLain
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme hybrid_reverse
 set background=light
 "set background=dark
 
