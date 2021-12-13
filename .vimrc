@@ -72,6 +72,7 @@ colorscheme happy_hacking
 "colorscheme nord
 "colorscheme SerialExperimentsLain
 "colorscheme PaperColor
+"colorscheme hybrid_reverse
 set background=light
 "set background=dark
 
