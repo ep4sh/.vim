@@ -68,10 +68,10 @@ call plug#end()
 
 set t_Co=256
 "colorscheme afterglow
-"colorscheme happy_hacking
+colorscheme happy_hacking
 "colorscheme nord
 "colorscheme SerialExperimentsLain
-colorscheme PaperColor
+"colorscheme PaperColor
 set background=light
 "set background=dark
 
