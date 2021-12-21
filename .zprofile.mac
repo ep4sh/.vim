@@ -1,0 +1,17 @@
+alias grep=ggrep
+alias t13="/usr/local/bin/terraform13"
+alias j8="export JAVA_HOME='/usr/local/opt/openjdk@8/'; java -version"
+alias j11="export JAVA_HOME='/usr/local/opt/openjdk@11/'; java -version"
+alias j15="export JAVA_HOME='/usr/local/opt/openjdk@15/'; java -version"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:~/.local/bin
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/pradchenko/.sdkman"
+[[ -s "/Users/pradchenko/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
+source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
+
+
+eval $(minikube -p minikube docker-env)
