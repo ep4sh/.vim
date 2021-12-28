@@ -10,7 +10,7 @@ ln -sf ~/.vim/.zshrc .zshrc
 ln -sf ~/.vim/.vimrc .vimrc
 ln -sf ~/.vim/.gitconfig .gitconfig
 ln -sf ~/.vim/.fzf.zsh .fzf.zsh
-ln -sf ~/.vim/.zprofile.mzc .zprofile
+ln -sf ~/.vim/.zprofile.mac .zprofile
 ```
 
 # Check lang-servers on coc-settings.json and install them
@@ -18,6 +18,28 @@ ln -sf ~/.vim/.zprofile.mzc .zprofile
 # Open vim and install plugins:
 ```
 :PlugInstall
+```
+
+# Brew install
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install node
+brew install kubectl
+brew install fzf
+brew install minikube
+brew install terraform
+brew install zsh
+brew install hyperkit
+brew install docker
+brew install k9s
+brew install gcloud
+brew tap hashicorp/tap
+brew install hashicorp/tap/vault
+brew install helm
+brew install docker-compose
+brew install rg
+brew install grep
+
 ```
 
 ## Books

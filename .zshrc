@@ -41,3 +41,7 @@ source $HOME/.zprofile
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="in:$PATH"
 export PATH="in:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/pradchenko/.sdkman"
+[[ -s "/Users/pradchenko/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
