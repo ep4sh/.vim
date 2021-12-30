@@ -64,6 +64,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ollykel/v-vim'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
 call plug#end()
 
 set t_Co=256
