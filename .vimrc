@@ -302,3 +302,10 @@ function MyTabLine()
         endif
         return s
 endfunction
+
+
+
+" Emoji past
+ab :check: ✔
+ab :todo: ✗
+ab :love: ❤️
