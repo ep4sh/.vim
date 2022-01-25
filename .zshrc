@@ -46,5 +46,3 @@ export PATH="in:$PATH"
 export SDKMAN_DIR="/Users/pradchenko/.sdkman"
 [[ -s "/Users/pradchenko/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
 
-powerline-daemon -q
-. /usr/share/powerline/bindings/zsh/powerline.zsh
