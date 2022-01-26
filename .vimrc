@@ -7,6 +7,7 @@ noremap <Right> <Nop>
 
 " General settings
 syntax on
+filetype plugin indent on
 set foldmethod=indent
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd Filetype tex setl updatetime=1
@@ -65,6 +66,7 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ollykel/v-vim'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set t_Co=256
@@ -79,7 +81,7 @@ set background=light
 
 " Coc setting
 "
-let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python']
+let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rls']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -172,6 +174,10 @@ let g:terraform_fmt_on_save=1
 if executable('rg')
     let g:rg_derive_root='true'
 endif
+
+" rust settings
+"
+let g:rustfmt_autosave = 1
 
 " Hacks
 let loaded_matchparen = 1
