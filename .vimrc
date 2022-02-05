@@ -312,6 +312,8 @@ endfunction
 
 
 " Emoji past
-ab :check: ✔
-ab :todo: ✗
+ab :check: ✅
+ab :todo: ⭕️
+ab :ok: 👌
 ab :love: ❤️
+ab :mad: 🤬
