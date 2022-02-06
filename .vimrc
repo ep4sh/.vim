@@ -76,8 +76,8 @@ colorscheme happy_hacking
 "colorscheme SerialExperimentsLain
 "colorscheme PaperColor
 "colorscheme hybrid_reverse
-set background=light
-"set background=dark
+"set background=light
+set background=dark
 
 " Coc setting
 "
@@ -163,6 +163,8 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run-vertical)
 autocmd FileType go nmap <leader>gg  <Plug>(go-def-vertical)
 autocmd FileType go nmap <leader>gl  <Plug>(go-lint)
 autocmd FileType go nmap <leader>gv  <Plug>(go-vet)
+autocmd FileType go nmap <leader>gi  <Plug>(go-implements)
+autocmd FileType go nmap <leader>gf  <Plug>(go-referrers)
 
 
 " terraform setting
