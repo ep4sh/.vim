@@ -48,25 +48,24 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go'
-Plug 'AndrewRadev/splitjoin.vim'
+"Plug 'preservim/nerdtree'
+Plug 'arcticicestudio/nord-vim'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
+Plug 'flazz/vim-colorschemes'
+
 Plug 'tweekmonster/gofmt.vim'
-Plug 'mbbill/undotree'
-Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'flazz/vim-colorschemes'
-Plug 'preservim/nerdtree'
+Plug 'mbbill/undotree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'vim-scripts/groovy.vim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'ollykel/v-vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
+Plug 'fatih/vim-go'
+Plug 'vim-airline/vim-airline'
 Plug 'rust-lang/rust.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'vim-scripts/groovy.vim'
+Plug 'ollykel/v-vim'
 call plug#end()
 
 set t_Co=256
