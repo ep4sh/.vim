@@ -192,6 +192,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pw :set wrap!<CR>
 nnoremap <Leader>pf :Files<CR>
+nnoremap <Leader>re :!find . -type f -not -path '*/\.*' -exec sed -i 's/%/%/g' {} +
 nnoremap <Leader>= :vertical resize +20<CR>
 nnoremap <Leader>- :vertical resize -20<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
@@ -207,12 +208,6 @@ let g:netrw_winsize = 30
 nnoremap <leader>dd :Lexplore %:p:h<CR>
 nnoremap <Leader>da :Lexplore<CR>
 
-
-" Crystal-lang maapings
-"
-nnoremap <leader>cf :CrystalFormat<CR>
-nnoremap <leader>cd :CrystalDef<CR>
-command CR !crystal run %
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
