@@ -168,9 +168,9 @@ autocmd FileType go nmap <leader>gf  <Plug>(go-referrers)
 
 " terraform setting
 "
-let g:terraform_align=1
+"let g:terraform_align=1
 let g:terraform_fold_sections=1
-let g:terraform_fmt_on_save=1
+"let g:terraform_fmt_on_save=1
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -272,7 +272,8 @@ function MyTabLine()
                         elseif getbufvar( b, "&buftype" ) == 'quickfix'
                                 let n .= '[Q]'
                         else
-                                let n .= pathshorten(bufname(b))
+                                let n .= '📄 ' . fnamemodify( bufname(b), ':t:s/.txt$//' )
+                                "let n .= fnamemodify( bufname(b), '%:t' )
                         endif
                         " check and ++ tab's &modified count
                         if getbufvar( b, "&modified" )
