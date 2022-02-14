@@ -48,7 +48,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
-"Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
 Plug 'flazz/vim-colorschemes'
