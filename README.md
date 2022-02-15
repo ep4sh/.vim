@@ -40,6 +40,30 @@ brew install docker-compose
 brew install rg
 brew install grep
 
+brew install go
+brew install vagrant
+brew install --cask virtualbox
+brew install postgresql
+brew tap ringohub/redis-cli
+brew update && brew doctor\n\nbrew install redis-cli
+brew install jq
+brew install httpie
+brew install dive
+brew install fd
+brew install gnupg
+brew install iam-policy-json-to-terraform
+brew install awscli
+brew install tree
+brew install wget
+brew install weechat
+brew install dpkg
+brew install findutils
+brew install coreutils
+brew install graphviz
+brew install hashicorp/tap/terraform-ls
+brew install yq
+brew install jwt-cli
+brew install ncdu
 ```
 
 ## Books
