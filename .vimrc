@@ -159,12 +159,21 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run-vertical)
-autocmd FileType go nmap <leader>gg  <Plug>(go-def-vertical)
-autocmd FileType go nmap <leader>gl  <Plug>(go-lint)
-autocmd FileType go nmap <leader>gv  <Plug>(go-vet)
 autocmd FileType go nmap <leader>gi  <Plug>(go-implements)
 autocmd FileType go nmap <leader>gf  <Plug>(go-referrers)
-
+autocmd FileType go map <leader>gs :GoDebugStart<cr>
+autocmd FileType go map <leader>gt :GoDebugStop<cr>
+autocmd FileType go map <leader>gb :GoDebugBreakpoint<cr>
+let g:go_debug_mappings = {
+            \    '(go-debug-continue)': {'key': 'c', 'arguments': '<nowait>'},
+            \      '(go-debug-next)': {'key': 'n', 'arguments': '<nowait>'},
+            \ '(go-debug-step)': {'key': 's'},
+            \ '(go-debug-print)': {'key': 'p'},}
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 60vnew',
+      \ 'stack':      'rightbelow 10new',
+      \ }
+      " \ 'goroutines':      'rightbelow 10new',
 
 " terraform setting
 "
