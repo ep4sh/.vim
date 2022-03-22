@@ -10,6 +10,7 @@ syntax on
 filetype plugin indent on
 set foldmethod=indent
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType nerdtree setlocal noreadonly
 autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
 au BufNewFile,BufRead Jenkinsfile setf groovy
