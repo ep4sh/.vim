@@ -91,6 +91,9 @@ nmap <leader>ax <Plug>(coc-codeaction-line)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" nerd tree settings
+"
+autocmd FileType nerdtree setlocal noreadonly
 
 " v settings
 "
