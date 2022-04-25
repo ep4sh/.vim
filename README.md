@@ -8,7 +8,7 @@ cd ~
 git clone git@github.com:ep4sh/.vim.git ~/.vim
 ln -sf ~/.vim/.zshrc .zshrc
 ln -sf ~/.vim/.vimrc .vimrc
-ln -sf ~/.vim/.gitconfig .gitconfig
+ln -sf ~/.vim/.gitconfig.orig .gitconfig
 ln -sf ~/.vim/.fzf.zsh .fzf.zsh
 ln -sf ~/.vim/.zprofile.mac .zprofile
 ```
