@@ -64,6 +64,7 @@ brew install hashicorp/tap/terraform-ls
 brew install yq
 brew install jwt-cli
 brew install ncdu
+brew install go-jsonnet
 ```
 
 ## Books
