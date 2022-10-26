@@ -66,9 +66,6 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'rust-lang/rust.vim'
 Plug 'hashivim/vim-terraform'
-Plug 'vim-scripts/groovy.vim'
-Plug 'ollykel/v-vim'
-Plug 'google/vim-jsonnet'
 call plug#end()
 
 set t_Co=256
