@@ -11,6 +11,9 @@ ln -sf ~/.vim/.vimrc .vimrc
 ln -sf ~/.vim/.gitconfig.orig .gitconfig
 ln -sf ~/.vim/.fzf.zsh .fzf.zsh
 ln -sf ~/.vim/.zprofile.mac .zprofile
+
+mkdir ~/.config
+ln -sf ~/.vim/nvim ~/.config/nvim
 ```
 
 # Check lang-servers on coc-settings.json and install them
