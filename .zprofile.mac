@@ -27,4 +27,3 @@ alias vlogin="vault login -method=oidc -path=oauth listenaddress=0.0.0.0 role=ad
 alias vssh="vault ssh -mode=ca -strict-host-key-checking=false -role=admin"
 alias vdevenv="vault ssh -mode=ca -mount-point=ssh-devenv -strict-host-key-checking=false -role=admin"
 
-
