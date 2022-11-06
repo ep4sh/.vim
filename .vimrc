@@ -5,6 +5,9 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+set wildmode=longest:full,full
+set wildmenu
+
 " General settings
 syntax on
 filetype plugin indent on
@@ -15,7 +18,8 @@ autocmd Filetype tex setl updatetime=1
 :au BufNewFile, BufRead *.py
 au BufNewFile,BufRead Jenkinsfile setf groovy
 set pastetoggle=<F6>
-set noshowmatch
+set showmatch
+set matchtime=3
 set hlsearch
 set hidden
 set noerrorbells
@@ -64,7 +68,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
-Plug 'rust-lang/rust.vim'
 Plug 'hashivim/vim-terraform'
 call plug#end()
 
@@ -80,7 +83,7 @@ set background=dark
 
 " Coc setting
 "
-let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rls']
+let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rls', 'coc-highlight', 'coc-typos', 'coc-pairs']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -91,31 +94,12 @@ nmap <leader>ax <Plug>(coc-codeaction-line)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" vim-mtach settings
+let g:loaded_matchit = 1
+
 " nerd tree settings
 "
 autocmd FileType nerdtree setlocal noreadonly
-
-" v settings
-"
-" Disable highlight white space after "[]".
-let g:v_highlight_array_whitespace_error = 0
-
-" Disable highlight white space around the communications operator that don't follow the standard style.
-let g:v_highlight_chan_whitespace_error = 1
-
-" Disable highlight instances of tabs following spaces.
-let g:v_highlight_space_tab_error = 1
-
-" Disable highlight trailing white space.
-let g:v_highlight_trailing_whitespace_error = 1
-
-" Disable highlight function calls.
-let g:v_highlight_function_calls = 1
-
-let g:v_highlight_fields = 1
-
-" Enable automatically formatting file via "v fmt -" before writing buffer.
-let g:v_autofmt_bufwritepre = 1
 
 " python settings
 "
