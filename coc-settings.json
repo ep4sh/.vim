@@ -22,6 +22,11 @@
       "filetypes": ["go"],
       "rootPatterns": ["go.mod"]
     },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
+    },
     "terraform": {
       "command": "terraform-lsp",
       "filetypes": ["terraform"],

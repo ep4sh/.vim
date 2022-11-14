@@ -69,6 +69,8 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
+Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 set t_Co=256
@@ -175,6 +177,8 @@ endif
 " rust settings
 "
 let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
 
 " Hacks
 let loaded_matchparen = 1
