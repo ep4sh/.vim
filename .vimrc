@@ -71,6 +71,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
 call plug#end()
 
 set t_Co=256
@@ -85,7 +86,7 @@ set background=dark
 
 " Coc setting
 "
-let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rls', 'coc-highlight', 'coc-typos', 'coc-pairs']
+let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rust-analyzer', 'coc-highlight', 'coc-typos', 'coc-pairs']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
