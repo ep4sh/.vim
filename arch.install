@@ -1,0 +1,8 @@
+pacman -S deluge deluge-gtk vlc \
+               networkmanager npm vi \
+               vim grub efibootmgr   \
+               budgie-desktop sudo   \
+               bluez bluez-utils fzf \
+               alsa-utils gnome-tweak-tool
+
+yay -S nerd-fonts-complete zsh-vi-mode
