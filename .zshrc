@@ -35,8 +35,8 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(vi-mode git docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zprofile
 
+[ -f ~/.zprofile ] && source $HOME/.zprofile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -47,8 +47,4 @@ export PATH="in:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="/Users/pradchenko/.sdkman"
 #[[ -s "/Users/pradchenko/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
-
-
-setxkbmap -option caps:escape,shift:both_capslock &
-
 

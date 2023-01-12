@@ -10,10 +10,7 @@ ln -sf ~/.vim/.zshrc .zshrc
 ln -sf ~/.vim/.vimrc .vimrc
 ln -sf ~/.vim/.gitconfig.orig .gitconfig
 ln -sf ~/.vim/.fzf.zsh .fzf.zsh
-ln -sf ~/.vim/.zprofile.mac .zprofile
-
-mkdir ~/.config
-ln -sf ~/.vim/nvim ~/.config/nvim
+cp ~/.vim/.fzf .
 ```
 
 # Check lang-servers on coc-settings.json and install them
@@ -21,8 +18,19 @@ ln -sf ~/.vim/nvim ~/.config/nvim
 # Open vim and install plugins:
 ```
 :PlugInstall
+:CocInstall
 ```
 
+For Arch:
+```
+cat ~/.vim/arch.install
+```
+
+
+On MacOS additionally:
+```
+ln -sf ~/.vim/.zprofile.mac .zprofile
+```
 # Brew install
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

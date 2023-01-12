@@ -1,8 +1,17 @@
-pacman -S deluge deluge-gtk vlc \
-               networkmanager npm vi \
-               vim grub efibootmgr   \
-               budgie-desktop sudo   \
-               bluez bluez-utils fzf \
-               alsa-utils gnome-tweak-tool
+pacman -S deluge deluge-gtk vlc            \
+               networkmanager npm vi       \
+               vim grub efibootmgr         \
+               budgie-desktop sudo         \
+               bluez bluez-utils fzf       \
+               alsa-utils gnome-tweak-tool \
+               openh264 x264 x265 xvidcore \
+
 
 yay -S nerd-fonts-complete zsh-vi-mode
+
+sudo systemctl enable systemd-timesyncd.service
+sudo systemctl start systemd-timesyncd.service
+
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+
