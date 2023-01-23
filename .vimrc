@@ -8,6 +8,8 @@ noremap <Right> <Nop>
 set wildmode=longest:full,full
 set wildmenu
 
+
+
 " General settings
 syntax on
 filetype plugin indent on
@@ -70,7 +72,7 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/vim-lsp'
 call plug#end()
 

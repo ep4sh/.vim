@@ -1,18 +1,31 @@
+################
+### pacman
+#
+
 pacman -S deluge deluge-gtk vlc            \
                networkmanager npm vi       \
-               gvim grub efibootmgr         \
+               gvim grub efibootmgr        \
                budgie-desktop sudo         \
                bluez bluez-utils fzf       \
                alsa-utils gnome-tweak-tool \
                openh264 x264 x265 xvidcore \
-               discord wget
+               discord wget flameshot      \
+               ntfs-3g docker-compose      \
+               docker
 
-
+################
+### YAY
+#
 yay -S nerd-fonts-complete zsh-vi-mode
 
+################
+### Systemctl
+#
 sudo systemctl enable systemd-timesyncd.service
 sudo systemctl start systemd-timesyncd.service
 
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
