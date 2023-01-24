@@ -41,7 +41,6 @@ set scrolloff=8
 set backspace=indent,eol,start
 set clipboard=unnamedplus,unnamed
 set autochdir
-
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -58,7 +57,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
 Plug 'flazz/vim-colorschemes'
 
 Plug 'tweekmonster/gofmt.vim'
@@ -73,7 +71,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 "Plug 'dense-analysis/ale'
-Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
 call plug#end()
 
 set t_Co=256
@@ -88,7 +87,7 @@ set background=dark
 
 " Coc setting
 "
-let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rust-analyzer', 'coc-highlight', 'coc-typos', 'coc-pairs']
+let g:coc_global_extensions = ['coc-json', 'coc-sh', 'coc-docker', 'coc-go', 'coc-python', 'coc-rust-analyzer', 'coc-highlight', 'coc-typos']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
