@@ -16,7 +16,7 @@ pacman -S deluge deluge-gtk vlc            \
 ################
 ### YAY
 #
-yay -S nerd-fonts-complete zsh-vi-mode
+yay -S nerd-fonts-complete zsh-vi-mode kind
 
 ################
 ### Systemctl
@@ -29,3 +29,14 @@ sudo systemctl start bluetooth.service
 
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
+
+
+################
+### kubectl krew
+#
+k krew install ns
+k krew install ctx
+k krew install explore
+k krew install example
+k krew install graph
+k krew install slice
