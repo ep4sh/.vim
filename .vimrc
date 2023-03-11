@@ -5,21 +5,12 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-set wildmode=longest:full,full
-set wildmenu
-
-
-
 " General settings
 syntax on
-filetype plugin indent on
-set foldmethod=indent
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType nerdtree setlocal noreadonly
-autocmd Filetype tex setl updatetime=1
-:au BufNewFile, BufRead *.py
-au BufNewFile,BufRead Jenkinsfile setf groovy
-set pastetoggle=<F6>
+filetype plugin indent on "recognize the type of the file
+set foldmethod=syntax
+set pastetoggle=<F6> " pasting from Internet
+set encoding=utf-8
 set showmatch
 set matchtime=3
 set hlsearch
@@ -30,8 +21,9 @@ set shiftwidth=4
 set expandtab
 set nu
 set noro
+set rnu
 set nowrap
-set smartcase
+set ignorecase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -41,6 +33,8 @@ set scrolloff=8
 set backspace=indent,eol,start
 set clipboard=unnamedplus,unnamed
 set autochdir
+set ai
+set si
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -70,9 +64,7 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
-"Plug 'dense-analysis/ale'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next',  'do': 'bash install.sh'  }
+
 call plug#end()
 
 set t_Co=256
@@ -99,11 +91,7 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " vim-mtach settings
-let g:loaded_matchit = 1
-
-" nerd tree settings
-"
-autocmd FileType nerdtree setlocal noreadonly
+"let g:loaded_matchit = 1
 
 " python settings
 "
@@ -121,8 +109,6 @@ let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
-"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-"let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " go settings
 "
@@ -181,6 +167,24 @@ endif
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
+
+"Filetypes
+
+au FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+au FileType nerdtree setlocal noreadonly
+au FileType tex setlocal updatetime=1
+au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au BufNewFile,BufRead *.jinja set syntax=htmljinja
+au BufNewFile,BufRead *.mako set ft=mako
+au FileType python map <buffer> F :set foldmethod=indent<cr>
+au FileType python inoremap <buffer> $r return
+au FileType python inoremap <buffer> $i import
+au FileType python inoremap <buffer> $p print
+au FileType python inoremap <buffer> $f # --- <esc>a
+au FileType python map <buffer> <leader>1 /class
+au FileType python map <buffer> <leader>2 /def
+au FileType python map <buffer> <leader>C ?class
+au FileType python map <buffer> <leader>D ?def
 
 " Hacks
 let loaded_matchparen = 1
@@ -317,9 +321,10 @@ endfunction
 
 
 
-" Emoji past
-ab :check: ✅
+" Emoji
+ab :done: ✅
 ab :todo: ⭕️
 ab :ok: 👌
 ab :love: ❤️
 ab :mad: 🤬
+

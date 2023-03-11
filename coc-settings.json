@@ -1,5 +1,6 @@
 {
   "python.jediEnabled": false,
+  "suggest.noselect": true,
 
   "languageserver": {
     "dockerfile": {
