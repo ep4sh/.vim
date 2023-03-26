@@ -64,6 +64,7 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
+Plug 'zivyangll/git-blame.vim'
 
 call plug#end()
 
@@ -202,6 +203,7 @@ nnoremap <Leader>re :!find . -type f -not -path '*/\.*' -exec sed -i 's/%/%/g' {
 nnoremap <Leader>= :vertical resize +20<CR>
 nnoremap <Leader>- :vertical resize -20<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -327,4 +329,3 @@ ab :todo: ⭕️
 ab :ok: 👌
 ab :love: ❤️
 ab :mad: 🤬
-
