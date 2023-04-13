@@ -74,3 +74,13 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+
+-- Go format and import on save
+local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})

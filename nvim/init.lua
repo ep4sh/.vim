@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -21,6 +20,22 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- Go plugin for nvim
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  },
 
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -121,15 +136,6 @@ require('lazy').setup({
 
 }, {})
 
-
-
-vim.o.termguicolors = true
-
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 
 -- [[ Highlight on yank ]]
@@ -288,11 +294,9 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
 
   lua_ls = {
     Lua = {
