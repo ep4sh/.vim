@@ -1,4 +1,5 @@
 stty icrnl
+alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
 alias kgpa='kubectl get pod --all-namespaces'
 alias vi='vim'
 alias python='python3'
@@ -42,9 +43,4 @@ source $ZSH/oh-my-zsh.sh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="in:$PATH"
 export PATH="in:$PATH"
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/Users/pradchenko/.sdkman"
-#[[ -s "/Users/pradchenko/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pradchenko/.sdkman/bin/sdkman-init.sh"
 
