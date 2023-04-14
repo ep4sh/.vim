@@ -11,7 +11,8 @@ pacman -S deluge deluge-gtk vlc            \
                openh264 x264 x265 xvidcore \
                discord wget flameshot      \
                ntfs-3g docker-compose      \
-               docker lshw neovim xclip
+               docker lshw neovim xclip    \
+               go-tools fd
 
 ################
 ### YAY
