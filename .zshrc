@@ -1,7 +1,8 @@
 stty icrnl
+alias vim='nvim'
+alias vi='vim'
 alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
 alias kgpa='kubectl get pod --all-namespaces'
-alias vi='vim'
 alias python='python3'
 alias t='terraform'
 alias g='googler'
@@ -41,6 +42,5 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="in:$PATH"
 export PATH="in:$PATH"
 
