@@ -84,6 +84,22 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'catppuccin/nvim',
+    priority = 999,
+    config = function()
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+
+  {
+    'ellisonleao/gruvbox.nvim',
+    priority = 998,
+    config = function()
+      vim.cmd.colorscheme 'gruvbox'
+    end,
+  },
+
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
