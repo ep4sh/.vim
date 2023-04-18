@@ -17,6 +17,7 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'dcampos/cmp-snippy',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -333,6 +334,7 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
@@ -354,6 +356,7 @@ cmp.setup {
       select = true,
     },
     ['<Tab>'] = cmp.mapping(function(fallback)
+      luasnip.jump(-1)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
