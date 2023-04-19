@@ -28,6 +28,9 @@ vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")
 vim.keymap.set("n", "<leader>k", ":wincmd k<CR>")
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>")
 
+-- Formats LSP
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
 -- Undo tree
 vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
 
