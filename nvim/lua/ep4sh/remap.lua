@@ -49,8 +49,9 @@ vim.keymap.set("n", "<leader>h", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-h>", ":tabprevious<CR>")
 vim.keymap.set("n", "<C-l>", ":tabnext<CR>")
 
--- New tab
+-- New tab/buf
 vim.keymap.set("n", "<C-n>", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>v", ":vsp<CR>")
 
 -- Show file browser
 vim.keymap.set("n", "<leader>S", ":Gitsigns blame_line<CR>")
