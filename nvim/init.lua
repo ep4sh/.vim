@@ -86,7 +86,7 @@ require('lazy').setup({
 
   {
     'catppuccin/nvim',
-    priority = 999,
+    priority = 998,
     config = function()
       vim.cmd.colorscheme 'catppuccin'
     end,
@@ -94,10 +94,14 @@ require('lazy').setup({
 
   {
     'ellisonleao/gruvbox.nvim',
-    priority = 998,
+    priority = 999,
     config = function()
       vim.cmd.colorscheme 'gruvbox'
     end,
+  },
+
+  { -- Set lualine as statusline
+    'mbbill/undotree',
   },
 
   { -- Set lualine as statusline
