@@ -19,8 +19,6 @@ alias bbaws='kubectl run busybox --image=ep4sh/debug:awscli --rm -it --restart=N
 alias bbq='kubectl run busybox --image=ep4sh/debug-sql --rm -it --restart=Never --command --'
 alias bba='kubectl run busybox --image=ep4sh/debug:arm --rm -it --restart=Never --command --'
 alias rg='rg --hidden'
-export GOPATH=$HOME/go
-export PATH="$PATH:$HOME/.rvm/bin"
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=linux
 export AWS_REGION=us-east-1
@@ -29,8 +27,6 @@ tmuxssh () {ssh -t $1 tmux ;}
 cleartf () {fd .terragrunt-cache --type d --hidden --no-ignore --exec rm -rf}
 rvme    () {source /$HOME/.rvm/scripts/rvm}
 
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
 ZSH_THEME="fwalch"
 ZSH_DISABLE_COMPFIX=true
 
@@ -41,6 +37,10 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.zprofile ] && source $HOME/.zprofile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="in:$PATH"
-
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH":$HOME/.local/bin
