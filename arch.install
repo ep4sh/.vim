@@ -12,7 +12,7 @@ pacman -S deluge deluge-gtk vlc            \
                discord wget flameshot      \
                ntfs-3g docker-compose      \
                docker lshw neovim xclip    \
-               go-tools fd
+               go-tools fd k9s
 
 ################
 ### YAY
