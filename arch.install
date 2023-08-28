@@ -4,7 +4,7 @@
 
 pacman -S deluge deluge-gtk vlc            \
                networkmanager npm vi       \
-               gvim grub efibootmgr        \
+               gvim                        \
                budgie-desktop sudo         \
                bluez bluez-utils fzf       \
                alsa-utils gnome-tweak-tool \
@@ -12,16 +12,22 @@ pacman -S deluge deluge-gtk vlc            \
                discord wget flameshot      \
                ntfs-3g docker-compose      \
                docker lshw neovim xclip    \
-               go-tools fd
+               go-tools fd budgie sddm     \
+               network-manager-applet      \
+               firefox guake less kubectl  \
+               fakeroot make gcc
 
 ################
 ### YAY
 #
-yay -S nerd-fonts-complete zsh-vi-mode kind
+#yay -S nerd-fonts-complete zsh-vi-mode kind
 
 ################
 ### Systemctl
 #
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+
 sudo systemctl enable systemd-timesyncd.service
 sudo systemctl start systemd-timesyncd.service
 
