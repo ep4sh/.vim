@@ -16,7 +16,8 @@ pacman -S deluge deluge-gtk vlc            \
                network-manager-applet      \
                firefox guake less kubectl  \
                fakeroot make gcc nautilus  \
-               thermald helm ripgrep
+               thermald helm ripgrep       \
+               python-pip
 
 ################
 ### YAY
