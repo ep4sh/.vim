@@ -15,16 +15,19 @@ pacman -S deluge deluge-gtk vlc            \
                go-tools fd budgie sddm     \
                network-manager-applet      \
                firefox guake less kubectl  \
-               fakeroot make gcc
+               fakeroot make gcc nautilus  \
+               thermald helm ripgrep
 
 ################
 ### YAY
 #
-#yay -S nerd-fonts-complete zsh-vi-mode kind
+yay -S nerd-fonts-complete zsh-vi-mode kind google-chrome
 
 ################
 ### Systemctl
 #
+sudo systemctl enable thermald
+sudo systemctl start thermald
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
 

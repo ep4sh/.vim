@@ -44,3 +44,10 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="in:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH":$HOME/.local/bin
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/home/pradchenko/yandex-cloud/path.bash.inc' ]; then source '/home/pradchenko/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/home/pradchenko/yandex-cloud/completion.zsh.inc' ]; then source '/home/pradchenko/yandex-cloud/completion.zsh.inc'; fi
+
