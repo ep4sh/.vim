@@ -17,7 +17,8 @@ pacman -S deluge deluge-gtk vlc            \
                firefox guake less kubectl  \
                fakeroot make gcc nautilus  \
                thermald helm ripgrep       \
-               python-pip
+               python-pip jq terraform yq  \
+               ansible
 
 ################
 ### YAY
