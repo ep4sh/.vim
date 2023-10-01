@@ -17,9 +17,9 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = "¶",
-  Method = "m",
-  Function = "@",
+  Text = "...",
+  Method = "M",
+  Function = "𝑓",
   Constructor = "",
   Field = "",
   Variable = "µ",
@@ -109,6 +109,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

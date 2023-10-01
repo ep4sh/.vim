@@ -34,9 +34,6 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- Undo tree
 vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
 
--- Rip Grep
-vim.keymap.set("n", "<leader>ps", ":Rg<SPACE>")
-
 -- set temporary wrap
 vim.keymap.set("n", "<leader>pw", ":set wrap!<CR>")
 
@@ -61,7 +58,7 @@ vim.keymap.set("n", "<leader>ee", ":Ex<CR>")
 
 -- Stolen remaps
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- Copies into system clip
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -84,7 +81,7 @@ local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+    require('go.format').goimport()
   end,
   group = format_sync_grp,
 })
