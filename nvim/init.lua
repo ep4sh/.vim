@@ -12,7 +12,78 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
+
+  {
+    "mfussenegger/nvim-dap",
+
+    dependencies = {
+
+      {
+        "rcarriga/nvim-dap-ui",
+        keys = {
+          { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+          { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+        },
+        opts = {},
+        config = function(_, opts)
+          -- setup dap config by VsCode launch.json file
+          -- require("dap.ext.vscode").load_launchjs()
+          local dap = require("dap")
+          local dapui = require("dapui")
+          dapui.setup(opts)
+          dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open({})
+          end
+          dap.listeners.before.event_terminated["dapui_config"] = function()
+            dapui.close({})
+          end
+          dap.listeners.before.event_exited["dapui_config"] = function()
+            dapui.close({})
+          end
+        end,
+      },
+
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        opts = {},
+      },
+
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = "mason.nvim",
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = {
+          -- Makes a best effort to setup the various debuggers with
+          -- reasonable debug configurations
+          automatic_installation = true,
+
+          -- You can provide additional configuration to the handlers,
+          -- see mason-nvim-dap README for more information
+          handlers = {},
+
+          -- You'll need to check that you have the required things installed
+          -- online, please don't ask me how to install them :)
+          ensure_installed = {
+            -- Update this to ensure that you have the debuggers for the langs you want
+          },
+        },
+      },
+    },
+
+    -- stylua: ignore
+    keys = {
+      { "<leader>B", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+      { "<leader>b", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+      { "<F1>", function() require("dap").step_into() end, desc = "Step Into" },
+      { "<F3>", function() require("dap").step_out() end, desc = "Step Out" },
+      { "<F2>", function() require("dap").step_over() end, desc = "Step Over" },
+      { "<F5>", function() require("dap").continue() end, desc = "Continue" },
+      { "<F8>", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+      { "<F6>", function() require("dap").terminate() end, desc = "Terminate" },
+      { "<F7>", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    },
+  },
+
 
   -- Git related plugins
   'tpope/vim-fugitive',
