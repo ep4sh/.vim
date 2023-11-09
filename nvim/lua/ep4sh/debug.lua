@@ -1,0 +1,12 @@
+-- DEBUG keymaps
+--  c 	continue
+--  n 	next
+--  s 	step
+--  o 	stepout
+--  S 	cap S: stop debug
+--  u 	up
+--  D 	cap D: down
+--  C 	cap C: run to cursor
+--  b 	toggle breakpoint
+--  P 	cap P: pause
+--  p 	print, hover value (also in visual mode)
