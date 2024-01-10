@@ -151,6 +151,12 @@ require('lazy').setup({
     'mbbill/undotree',
   },
 
+  -- https://github.com/nvim-pack/nvim-spectre
+  {
+    'nvim-lua/plenary.nvim',
+    'nvim-pack/nvim-spectre'
+  },
+
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
