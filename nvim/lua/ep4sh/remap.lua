@@ -86,6 +86,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
+vim.keymap.set('n', '<leader>er', "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+
 -- nvim-spectre keymaps
 vim.keymap.set('n', '<leader>s', '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre"
