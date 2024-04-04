@@ -44,6 +44,8 @@ require('lazy').setup({
         opts = {},
       },
 
+      { "nvim-neotest/nvim-nio" },
+
       {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = "mason.nvim",
@@ -79,16 +81,21 @@ require('lazy').setup({
   -- Go plugin for nvim
   {
     "ray-x/go.nvim",
-    dependencies = { -- optional packages
+    dependencies = {  -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({
+  lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+  icons = {breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
+  fillstruct = 'gopls',  -- set to fillstruct if gopls fails to fill struct
+  goimports ='gopls', -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
+      })
     end,
-    event = { "CmdlineEnter" },
-    ft = { "go", 'gomod' },
+    event = {"CmdlineEnter"},
+    ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
 
