@@ -52,3 +52,11 @@ if [ -f '/home/pradchenko/yandex-cloud/path.bash.inc' ]; then source '/home/prad
 if [ -f '/home/pradchenko/yandex-cloud/completion.zsh.inc' ]; then source '/home/pradchenko/yandex-cloud/completion.zsh.inc'; fi
 
 source /home/pradchenko/yandex-cloud/completion.zsh.inc
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.1/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)
+#
+
+alias git_pull_all='find . -not -path "*/.terraform/*" -type d -name .git -exec bash -c "cd \"{}\"/../ && pwd && git pull" \;'
