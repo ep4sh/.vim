@@ -51,8 +51,6 @@ if [ -f '/home/pradchenko/yandex-cloud/path.bash.inc' ]; then source '/home/prad
 # The next line enables shell command completion for yc.
 if [ -f '/home/pradchenko/yandex-cloud/completion.zsh.inc' ]; then source '/home/pradchenko/yandex-cloud/completion.zsh.inc'; fi
 
-source /home/pradchenko/yandex-cloud/completion.zsh.inc
-
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.1/contrib/zsh $fpath)
 compinit
