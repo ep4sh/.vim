@@ -18,7 +18,8 @@ pacman -S deluge deluge-gtk vlc            \
                fakeroot make gcc nautilus  \
                thermald helm ripgrep       \
                python-pip jq terraform yq  \
-               ansible man man-pages which
+               ansible man man-pages which \
+               strace
 
 ################
 ### YAY
