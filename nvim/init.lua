@@ -17,16 +17,32 @@ require('lazy').setup({
     "mfussenegger/nvim-dap",
 
     dependencies = {
-
-      {
         "rcarriga/nvim-dap-ui",
-        opts = {},
+        "theHamsta/nvim-dap-virtual-text",
+        "leoluz/nvim-dap-go",
+        "nvim-neotest/nvim-nio",
+        {
+          "jay-babu/mason-nvim-dap.nvim",
+          dependencies = "mason.nvim",
+          cmd = { "DapInstall", "DapUninstall" },
+          opts = {
+            automatic_installation = true,
+            handlers = {},
+            ensure_installed = {},
+          },
+        },
+      },
+
         config = function(_, opts)
           -- setup dap config by VsCode launch.json file
           -- require("dap.ext.vscode").load_launchjs()
           local dap = require("dap")
           local dapui = require("dapui")
-          dapui.setup(opts)
+          local dapgo = require("dap-go")
+
+          dapui.setup()
+          dapgo.setup()
+
           dap.listeners.after.event_initialized["dapui_config"] = function()
             dapui.open({})
           end
@@ -37,28 +53,8 @@ require('lazy').setup({
             dapui.close({})
           end
         end,
-      },
-
-      {
-        "theHamsta/nvim-dap-virtual-text",
-        opts = {},
-      },
-
-      { "nvim-neotest/nvim-nio" },
-
-      {
-        "jay-babu/mason-nvim-dap.nvim",
-        dependencies = "mason.nvim",
-        cmd = { "DapInstall", "DapUninstall" },
-        opts = {
-          automatic_installation = true,
-          handlers = {},
-          ensure_installed = {},
-        },
-      },
-    },
-
   },
+
 
 
   -- Git related plugins
