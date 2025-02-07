@@ -20,7 +20,7 @@ vim.keymap.set("n", "<Left>", "<nop>")
 vim.keymap.set("n", "<Right>", "<nop>")
 
 -- save the buffer when cropping
-vim.keymap.set("x", "<leader>p", [["_dP]])
+--vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- moving across buffers
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>")
