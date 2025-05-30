@@ -3,7 +3,6 @@ local servers = {
   pyright = {},
   ruby_lsp = {},
   helm_ls = {},
-  biome = {},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -23,11 +22,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('td', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  nmap('td', require('telescope.builtin').lsp_type_definitions, '[T]ype [D]efinition')
 end
 
 local lspconfig = require('lspconfig')
