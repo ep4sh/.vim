@@ -19,7 +19,7 @@ pacman -S deluge deluge-gtk vlc            \
                thermald helm ripgrep       \
                python-pip jq terraform yq  \
                ansible man man-pages which \
-               strace
+               strace luarocks
 
 ################
 ### YAY
