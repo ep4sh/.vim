@@ -49,12 +49,26 @@ local on_attach = function(client, bufnr)
   end
 
   nmap('gd', function()
-    require('telescope.builtin').lsp_definitions({ jump_type = 'edit' }) -- или 'split', 'vsplit', 'edit'
+    vim.cmd("Telescope lsp_definitions jump_type=never")
   end, '[G]oto [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-  nmap('td', require('telescope.builtin').lsp_type_definitions, '[T]ype [D]efinition')
-  nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
+
+  nmap('gd', function()
+    require('telescope.builtin').lsp_references({}, {})
+  end, '[G]oto [R]eferences')
+
+  nmap('gi', function()
+    require('telescope.builtin').lsp_implementations({}, {})
+  end, '[G]oto [I]mplementation')
+
+  nmap('td', function()
+    require('telescope.builtin').lsp_type_definitions({}, {})
+  end, '[T]ype [D]efinition')
+
+
+  nmap('rn', function()
+    vim.lsp.buf.rename()
+  end, '[R]e[n]ame')
+
 end
 
 local lspconfig = require('lspconfig')
