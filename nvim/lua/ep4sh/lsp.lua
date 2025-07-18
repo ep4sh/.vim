@@ -13,7 +13,7 @@ local servers = {
         buildFlags = {"-tags=integration"},
         completeUnimported = true,
         usePlaceholders = true,
-        semanticTokens = true,
+        semanticTokens = false,
         hints = {
           assignVariableTypes = true,
           compositeLiteralFields = true,
@@ -48,26 +48,16 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  local builtin = require('telescope.builtin')
+
   nmap('gd', function()
-    vim.cmd("Telescope lsp_definitions jump_type=never")
+    builtin.lsp_definitions({})
   end, '[G]oto [D]efinition')
 
-  nmap('gd', function()
-    require('telescope.builtin').lsp_references({}, {})
-  end, '[G]oto [R]eferences')
-
-  nmap('gi', function()
-    require('telescope.builtin').lsp_implementations({}, {})
-  end, '[G]oto [I]mplementation')
-
-  nmap('td', function()
-    require('telescope.builtin').lsp_type_definitions({}, {})
-  end, '[T]ype [D]efinition')
-
-
-  nmap('rn', function()
-    vim.lsp.buf.rename()
-  end, '[R]e[n]ame')
+  nmap('gr', builtin.lsp_references, '[G]oto [R]eferences')
+  nmap('gi', builtin.lsp_implementations, '[G]oto [I]mplementation')
+  nmap('td', builtin.lsp_type_definitions, '[T]ype [D]efinition')
+  nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
 end
 

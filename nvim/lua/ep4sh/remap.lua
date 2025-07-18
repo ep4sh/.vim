@@ -28,9 +28,6 @@ vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")
 vim.keymap.set("n", "<leader>k", ":wincmd k<CR>")
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>")
 
--- Formats LSP
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 -- Undo tree
 vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
 
@@ -57,7 +54,6 @@ vim.keymap.set("n", "<leader>S", ":Gitsigns blame_line<CR>")
 vim.keymap.set("n", "<leader>ee", ":Ex<CR>")
 
 -- Stolen remaps
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- Copies into system clip
@@ -65,9 +61,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Go format and import on save
@@ -85,13 +78,4 @@ vim.keymap.set('n', '<leader>er', "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 -- nvim-spectre keymaps
 vim.keymap.set('n', '<leader>s', '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre"
-})
-vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-    desc = "Search current word"
-})
-vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-    desc = "Search current word"
-})
-vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-    desc = "Search on current file"
 })
