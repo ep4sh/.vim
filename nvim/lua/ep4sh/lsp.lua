@@ -56,7 +56,7 @@ local on_attach = function(client, bufnr)
 
   nmap('gr', builtin.lsp_references, '[G]oto [R]eferences')
   nmap('gi', builtin.lsp_implementations, '[G]oto [I]mplementation')
-  nmap('td', builtin.lsp_type_definitions, '[T]ype [D]efinition')
+  nmap('gt', builtin.lsp_type_definitions, '[T]ype [D]efinition')
   nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
 end
