@@ -84,10 +84,13 @@ require('lazy').setup({
     },
     config = function()
       require("go").setup({
-  lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
-  icons = {breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
-  fillstruct = 'gopls',  -- set to fillstruct if gopls fails to fill struct
-  goimports ='gopls', -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
+        lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+        icons = {breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
+        fillstruct = 'gopls',  -- set to fillstruct if gopls fails to fill struct
+        goimports ='gopls', -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
+        lsp_inlay_hints = {
+          enable = false, -- this is the only field apply to neovim > 0.10
+        },
       })
     end,
     event = {"CmdlineEnter"},
