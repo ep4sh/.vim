@@ -20,7 +20,7 @@ pacman -S deluge deluge-gtk vlc            \
                python-pip jq terraform yq  \
                ansible man man-pages which \
                strace luarocks inetutils   \
-               net-tools
+               net-tools xdg-utils
 
 ################
 ### YAY
