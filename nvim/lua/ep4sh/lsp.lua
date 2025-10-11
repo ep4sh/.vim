@@ -61,9 +61,8 @@ local on_attach = function(client, bufnr)
 
 end
 
-local lspconfig = require('lspconfig')
 for server, config in pairs(servers) do
-  lspconfig[server].setup({
+ vim.lsp.config(server, {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = config.settings or {},
