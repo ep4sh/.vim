@@ -27,7 +27,6 @@ local servers = {
     }
   },
   pyright = {},
-  ruby_lsp = {},
   helm_ls = {},
 }
 
