@@ -28,6 +28,7 @@ local servers = {
   },
   pyright = {},
   helm_ls = {},
+  zls = {},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -57,6 +58,15 @@ local on_attach = function(client, bufnr)
   nmap('gi', builtin.lsp_implementations, '[G]oto [I]mplementation')
   nmap('gt', builtin.lsp_type_definitions, '[T]ype [D]efinition')
   nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
+
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end
+    })
+  end
 
 end
 
