@@ -59,14 +59,7 @@ local on_attach = function(client, bufnr)
   nmap('gt', builtin.lsp_type_definitions, '[T]ype [D]efinition')
   nmap('rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({ async = false })
-      end
-    })
-  end
+
 
 end
 
