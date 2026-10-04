@@ -77,3 +77,4 @@ for server, config in pairs(servers) do
     settings = config.settings or {},
   })
 end
+

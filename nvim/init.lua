@@ -201,7 +201,8 @@ require('lazy').setup({
   },
 
   -- https://github.com/akinsho/git-conflict.nvim
-  {'akinsho/git-conflict.nvim', version = "*", config = true}
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
+  { "ziglang/zig.vim" }
 
 }, {})
 

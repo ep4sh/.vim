@@ -20,8 +20,9 @@ alias bbq='kubectl run busybox --image=dockerhub.timeweb.cloud/ep4sh/debug-sql -
 alias bba='kubectl run busybox --image=dockerhub.timeweb.cloud/ep4sh/debug:arm --rm -it --restart=Never --command --'
 alias rg='rg --hidden'
 alias open='xdg-open'
+alias pi='pi --tools web_search,subagent,web_fetch'
 export ZSH="$HOME/.oh-my-zsh"
-export TERM=linux
+export TERM=xterm-256color
 export AWS_REGION=us-east-1
 
 tmuxssh () {ssh -t $1 tmux ;}
@@ -60,3 +61,11 @@ compinit
 #
 
 alias git_pull_all='find . -not -path "*/.terraform/*" -type d -name .git -exec bash -c "cd \"{}\"/../ && pwd && git pull" \;'
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opencode
+export PATH=/home/ep4sh/.opencode/bin:$PATH
+

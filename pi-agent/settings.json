@@ -1,0 +1,37 @@
+{
+  "defaultModel": "gemma4:31b-cloud",
+  "defaultProvider": "ollama",
+  "hideThinkingBlock": false,
+  "lastChangelogVersion": "1.0.2",
+  "packages": [
+    "npm:@ollama/pi-web-search",
+    "npm:pi-grilling-skill"
+  ],
+  "theme": "dark",
+  "localllm": {
+    "servers": [
+      {
+        "id": "25zx5e",
+        "name": "Ollama",
+        "baseUrl": "http://localhost:11434/v1",
+        "apiKey": "",
+        "apiType": "ollama",
+        "models": [
+          {
+            "id": "qwen3:4b",
+            "name": "qwen3:4b",
+            "contextWindow": 262144,
+            "maxTokens": 65536,
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "loaded": false,
+            "sizeBytes": 2497293931,
+            "quantization": "Q4_K_M"
+          }
+        ]
+      }
+    ]
+  }
+}

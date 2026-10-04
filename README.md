@@ -11,6 +11,7 @@ ln -sf ~/.vim/.vimrc .vimrc
 ln -sf ~/.vim/.gitconfig.orig .gitconfig
 ln -sf ~/.vim/.fzf.zsh .fzf.zsh
 cp ~/.vim/.fzf .
+[ ! -d "$HOME/.pi" ] && mkdir -p "$HOME/.pi/agent" && ln -sf "$HOME/.vim/pi-agent"/* "$HOME/.pi/agent/"
 ```
 
 # Check lang-servers on coc-settings.json and install them
