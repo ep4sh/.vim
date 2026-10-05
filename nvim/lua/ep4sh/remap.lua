@@ -23,10 +23,10 @@ vim.keymap.set("n", "<Right>", "<nop>")
 --vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- moving across buffers
-vim.keymap.set("n", "<leader>h", ":wincmd h<CR>")
-vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")
-vim.keymap.set("n", "<leader>k", ":wincmd k<CR>")
-vim.keymap.set("n", "<leader>l", ":wincmd l<CR>")
+-- vim.keymap.set("n", "<leader>h", ":wincmd h<CR>")
+-- vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")
+-- vim.keymap.set("n", "<leader>k", ":wincmd k<CR>")
+-- vim.keymap.set("n", "<leader>l", ":wincmd l<CR>")
 
 -- Undo tree
 vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
