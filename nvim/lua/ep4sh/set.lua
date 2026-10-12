@@ -36,6 +36,6 @@ vim.opt.backup = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
+vim.opt.updatetime = 300
 vim.opt.colorcolumn = "80"
 vim.o.termguicolors = true
