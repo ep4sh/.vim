@@ -1,11 +1,7 @@
 FROM ornith-fast:latest
 
-TEMPLATE """{{ if .System }}<|im_start|>system
-{{ .System }}<|im_end|}
-{{ end }}{{ if .Prompt }}<|im_start|>user
-{{ .Prompt }}<|im_end|}
-{{ end }}<|im_start|>assistant
-{{ .Response }}<|im_end|>"""
+RENDERER qwen3.5
+PARSER qwen3.5
 
 # 2. ЖЕСТКИЕ СТОП-СИМВОЛЫ
 PARAMETER stop "<|im_end|>"
@@ -17,6 +13,6 @@ PARAMETER top_p 0.8
 PARAMETER num_ctx 40760
 
 # 4. СИСТЕМНЫЙ ПРОМПТ
-SYSTEM """You are a precise assistant and coding expert. 
+SYSTEM """You are a precise assistant and coding expert.
 CRITICAL: If you do not know the answer, state "I don't know". Do not invent, hallucinate, or guess APIs, libraries, or facts. Be strictly factual and concise.
 Keep your <think> section minimal and brief. Read AGENTS.md file in the current working directory if founded."""

@@ -2,7 +2,7 @@
   "defaultModel": "gemma4:31b-cloud",
   "defaultProvider": "ollama",
   "hideThinkingBlock": false,
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "packages": [
     "npm:@ollama/pi-web-search",
     "npm:pi-grilling-skill"
