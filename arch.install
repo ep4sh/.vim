@@ -20,7 +20,9 @@ pacman -S deluge deluge-gtk vlc            \
                python-pip jq terraform yq  \
                ansible man man-pages which \
                strace luarocks inetutils   \
-               net-tools xdg-utils
+               net-tools xdg-utils         \
+               radeontop hipblas           \
+               rocm-hip-runtime valgrind
 
 ################
 ### YAY
