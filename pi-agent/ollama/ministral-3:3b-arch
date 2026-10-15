@@ -1,18 +1,11 @@
-FROM ornith-fast:latest
-
-RENDERER qwen3.5
-PARSER qwen3.5
-
-# 2. ЖЕСТКИЕ СТОП-СИМВОЛЫ
-PARAMETER stop "<|im_end|>"
-PARAMETER stop "<|im_start|>"
+FROM ministral-3:3b
 
 # 3. КОРРЕКЦИЯ ПАРАМЕТРОВ ДЛЯ ТОЧНОСТИ
-PARAMETER temperature 0.2
-PARAMETER top_p 0.8
-PARAMETER num_ctx 40760
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER num_ctx 32768
 
 # 4. СИСТЕМНЫЙ ПРОМПТ
-SYSTEM """You are a precise assistant and coding expert.
+SYSTEM """You are a precise assistant, coding expert and extreme clever architect.
 CRITICAL: If you do not know the answer, state "I don't know". Do not invent, hallucinate, or guess APIs, libraries, or facts. Be strictly factual and concise.
 Keep your <think> section minimal and brief. Read AGENTS.md file in the current working directory if founded."""

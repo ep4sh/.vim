@@ -1,7 +1,7 @@
 {
-  "defaultModel": "gemma4:31b-cloud",
+  "defaultModel": "architector:latest",
   "defaultProvider": "ollama",
-  "hideThinkingBlock": false,
+  "hideThinkingBlock": true,
   "lastChangelogVersion": "1.2.0",
   "packages": [
     "npm:@ollama/pi-web-search",

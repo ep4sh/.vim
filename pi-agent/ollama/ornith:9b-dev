@@ -1,0 +1,12 @@
+FROM hf.co/ornith-ai/Ornith-1.0-9B-GGUF:Q4_K_M
+
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER min_p 0.0
+PARAMETER num_ctx 40760
+PARAMETER repeat_penalty 1.1
+
+SYSTEM """You are a precise assistant and coding expert.
+CRITICAL: If you do not know the answer, state 'I dont know'. Do not invent, hallucinate, or guess APIs, libraries, or facts. Be strictly factual and concise.
+Keep your <think> section minimal and brief. Read AGENTS.md file in the current working directory if founded."""

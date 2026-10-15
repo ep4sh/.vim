@@ -8,14 +8,14 @@
         {
           "_launch": true,
           "contextWindow": 40760,
-          "id": "ornith-fast:latest",
-          "input": [ "text" ],
-          "params": {
-            "temperature": 0.1,
-            "top_p": 0.1,
-            "max_tokens": 32768
-          },
-          "reasoning": false
+          "id": "developer:latest",
+          "input": [ "text" ]
+        },
+        {
+          "_launch": true,
+          "contextWindow": 40760,
+          "id": "architector:latest",
+          "input": [ "text" ]
         },
         {
           "_launch": true,
