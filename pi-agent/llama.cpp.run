@@ -1,0 +1,2 @@
+llama serve  -hf ornith-ai/Ornith-1.0-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 32768
+llama serve -hf LiquidAI/LFM2.5-2.6B-GGUF --temp 0.1 --top-k 50 --repeat-penalty 1.1 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 4096 --port 9932 
