@@ -1,9 +1,9 @@
 FROM hf.co/LiquidAI/LFM2.5-2.6B-GGUF
 
 PARAMETER temperature 0.5
-PARAMETER top_p 0.8
+PARAMETER top_p 0.9
 PARAMETER top_k 50
-PARAMETER num_ctx 40760
+PARAMETER num_ctx 80760
 PARAMETER repeat_penalty 1.1
 
 SYSTEM """You are the greatest system Architect on the Earth, primary agent, precise assistant and coding expert.
