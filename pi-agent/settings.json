@@ -2,7 +2,7 @@
   "defaultModel": "architector:latest",
   "defaultProvider": "ollama",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "1.2.0",
+  "lastChangelogVersion": "1.3.0",
   "packages": [
     "npm:@ollama/pi-web-search",
     "npm:pi-grilling-skill"
