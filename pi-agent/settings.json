@@ -4,8 +4,8 @@
   "hideThinkingBlock": true,
   "lastChangelogVersion": "1.3.0",
   "packages": [
-    "npm:@ollama/pi-web-search",
-    "npm:pi-grilling-skill"
+    "npm:pi-grilling-skill",
+    "npm:pi-native-search"
   ],
   "theme": "dark",
   "localllm": {

@@ -19,12 +19,6 @@
         },
         {
           "_launch": true,
-          "contextWindow": 40760,
-          "id": "architectorq:latest",
-          "input": [ "text" ]
-        },
-        {
-          "_launch": true,
           "contextWindow": 262144,
           "id": "gemma4:31b-cloud",
           "input": [ "text" ]

@@ -20,7 +20,6 @@ alias bbq='kubectl run busybox --image=dockerhub.timeweb.cloud/ep4sh/debug-sql -
 alias bba='kubectl run busybox --image=dockerhub.timeweb.cloud/ep4sh/debug:arm --rm -it --restart=Never --command --'
 alias rg='rg --hidden'
 alias open='xdg-open'
-alias pi='pi --tools web_search,subagent,web_fetch'
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color
 export AWS_REGION=us-east-1
