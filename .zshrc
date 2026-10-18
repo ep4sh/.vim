@@ -68,3 +68,4 @@ export NVM_DIR="$HOME/.config/nvm"
 # opencode
 export PATH=/home/ep4sh/.opencode/bin:$PATH
 
+source /home/ep4sh/.vim/pi-agent/llama.cpp.run
