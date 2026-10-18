@@ -1,2 +1,25 @@
-llama serve  -hf ornith-ai/Ornith-1.0-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 32768
-llama serve -hf LiquidAI/LFM2.5-2.6B-GGUF --temp 0.1 --top-k 50 --repeat-penalty 1.1 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 4096 --port 9932 
+llama serve  -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 \
+             --no-ui --agent --tools all --gpu-layers all -np 1 \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --presence-penalty 0.0 --repeat-penalty 1.0 \
+             -n 1 -cb --ctx_size 65545
+
+llama serve  -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q4_0 -ctv q4_0 \
+             --no-ui --agent --tools all --gpu-layers all -np 1 \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --presence-penalty 0.0 --repeat-penalty 1.0 \
+             -n 1 -cb --ctx_size 65545 --keep -1
+
+llama serve  -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 \
+             --no-ui --agent --tools all --gpu-layers all -np 1 \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --presence-penalty 0.0 --repeat-penalty 1.0 \
+             --ctx_size 32768
+
+llama serve -hf LiquidAI/LFM2.5-2.6B-GGUF --temp 0.1 --top-k 50 --repeat-penalty 1.1 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 4096 --port 9932
+
+llama serve  -hf Tesslate/OmniCoder-9B-GGUF -fa on -ctk q8_0 -ctv q8_0 \
+             --no-ui --agent --tools all --gpu-layers all -np 1 \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --presence-penalty 0.0 --repeat-penalty 1.0 \
+             -n 1 -cb --ctx_size 65545

@@ -1,27 +1,17 @@
 {
   "providers": {
-    "ollama": {
+    "llama-cpp-developer": {
+      "baseUrl": "http://localhost:9931/v1",
       "api": "openai-completions",
-      "apiKey": "ollama",
-      "baseUrl": "http://127.0.0.1:11434/v1",
+      "apiKey": "none",
       "models": [
         {
-          "_launch": true,
-          "contextWindow": 40760,
-          "id": "developer:latest",
-          "input": [ "text" ]
+          "id": "ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M",
+          "contextWindow": 65536
         },
         {
-          "_launch": true,
-          "contextWindow": 40760,
-          "id": "architector:latest",
-          "input": [ "text" ]
-        },
-        {
-          "_launch": true,
-          "contextWindow": 262144,
-          "id": "gemma4:31b-cloud",
-          "input": [ "text" ]
+          "id": "Tesslate/OmniCoder-9B-GGUF",
+          "contextWindow": 65536
         }
       ]
     }
