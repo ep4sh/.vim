@@ -1,26 +1,6 @@
-# --- Ornith (q4_0, ctx 65545, без batch) ---
-llama_serve_ornith_q4() {
-  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q4_0, ctx 65545)"
-  llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 \
-             --no-ui --agent --tools all --gpu-layers all -np 1 \
-             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
-             --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -n 1 -cb --ctx_size 65545
-}
-
-# --- Ornith (q4_0, ctx 65545, keep -1) ---
-llama_serve_ornith_q4_keep() {
-  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q4_0, ctx 65545, keep -1)"
-  llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q4_0 -ctv q4_0 \
-             --no-ui --agent --tools all --gpu-layers all -np 1 \
-             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
-             --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -n 1 -cb --ctx_size 65545 --keep -1
-}
-
 # --- Ornith (q8_0, ctx 32768) ---
 llama_serve_ornith_q8() {
-  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q8_0, ctx 32768)"
+  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q8_K_M (q8_0, ctx 32768)"
   llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M -fa on -ctk q8_0 -ctv q8_0 \
              --no-ui --agent --tools all --gpu-layers all -np 1 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
@@ -41,5 +21,5 @@ llama_serve_omnicoder() {
              --no-ui --agent --tools all --gpu-layers all -np 1 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -n 1 -cb --ctx_size 65545
+             -n 1 -cb --ctx_size 40000
 }
