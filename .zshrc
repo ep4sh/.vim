@@ -69,3 +69,8 @@ export NVM_DIR="$HOME/.config/nvm"
 export PATH=/home/ep4sh/.opencode/bin:$PATH
 
 source /home/ep4sh/.vim/pi-agent/llama.cpp.run
+
+# strix
+export PATH=/home/ep4sh/.strix/bin:$PATH
+export LLM_API_BASE="http://localhost:9931/v1"
+export LLM_API_KEY="your-api-key"

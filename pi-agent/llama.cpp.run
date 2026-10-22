@@ -1,10 +1,18 @@
-# --- Ornith (q8_0, ctx 32768) ---
-llama_serve_ornith_q8() {
-  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q8_K_M (q8_0, ctx 32768)"
-  llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q8_0 -fa on -ctk q8_0 -ctv q8_0 \
-             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+
+# --- Ornith (q4_k_m, ctx ???) ---
+llama_serve_ornith_q4() {
+  if [[ -z "$1" ]]; then
+    CTX_SIZE=32768
+  else
+    CTX_SIZE="$1"
+  fi
+  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q8_0, ctx $CTX_SIZE)"
+  llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M \
+             -fa on -ctk q8_0 -ctv q8_0 \
+             --temperature 0.5 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             --ctx_size 32768
+             -np 1 \
+             --ctx_size $CTX_SIZE
 }
 
 # --- LiquidAI/LFM2.5-2.6B ---
@@ -20,5 +28,5 @@ llama_serve_omnicoder() {
              --no-ui --agent --tools all --gpu-layers all -np 1 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -n 1 -cb --ctx_size 40000
+             -n 1 -cb --ctx_size 32768
 }

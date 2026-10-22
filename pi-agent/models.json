@@ -7,11 +7,11 @@
       "models": [
         {
           "id": "ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M",
-          "contextWindow": 65536
+          "contextWindow": 65535
         },
         {
           "id": "Tesslate/OmniCoder-9B-GGUF",
-          "contextWindow": 65536
+          "contextWindow": 65535
         }
       ]
     }
