@@ -1,4 +1,3 @@
-
 # --- Ornith (q4_k_m, ctx ???) ---
 llama_serve_ornith_q4() {
   if [[ -z "$1" ]]; then
@@ -6,27 +5,42 @@ llama_serve_ornith_q4() {
   else
     CTX_SIZE="$1"
   fi
-  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q8_0, ctx $CTX_SIZE)"
+  echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q4_k_m, ctx $CTX_SIZE)"
   llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M \
              -fa on -ctk q8_0 -ctv q8_0 \
              --temperature 0.5 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -np 1 \
+             -np 1 --no-ui\
              --ctx_size $CTX_SIZE
 }
 
 # --- LiquidAI/LFM2.5-2.6B ---
 llama_serve_lfm() {
-  echo "[llama] starting: LiquidAI/LFM2.5-2.6B-GGUF"
-  llama serve -hf LiquidAI/LFM2.5-2.6B-GGUF --temp 0.1 --top-k 50 --repeat-penalty 1.1 --no-ui --agent --tools all --gpu-layers all -np 1 --ctx_size 4096 --port 9932
+  if [[ -z "$1" ]]; then
+    CTX_SIZE=32768
+  else
+    CTX_SIZE="$1"
+  fi
+  echo "[llama] starting: LiquidAI/LFM2.5-2.6B-GGUF CTX $CTX_SIZE"
+  llama serve -hf LiquidAI/LFM2.5-2.6B-GGUF \
+              --temp 0.8 --top-k 50         \
+              --repeat-penalty 1.1 --no-ui  \
+              --agent --tools all           \
+              --gpu-layers all -np 1        \
+              --ctx_size $CTX_SIZE
 }
 
 # --- Tesslate/OmniCoder-9B ---
 llama_serve_omnicoder() {
-  echo "[llama] starting: Tesslate/OmniCoder-9B-GGUF (q8_0, ctx 65545)"
+  if [[ -z "$1" ]]; then
+    CTX_SIZE=32768
+  else
+    CTX_SIZE="$1"
+  fi
+  echo "[llama] starting: Tesslate/OmniCoder-9B-GGUF ctx $CTX_SIZE "
   llama serve -hf Tesslate/OmniCoder-9B-GGUF -fa on -ctk q8_0 -ctv q8_0 \
              --no-ui --agent --tools all --gpu-layers all -np 1 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -n 1 -cb --ctx_size 32768
+             -n 1 -cb --ctx_size $CTX_SIZE
 }
