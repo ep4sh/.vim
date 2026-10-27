@@ -5,7 +5,8 @@
   "lastChangelogVersion": "1.4.0",
   "packages": [
     "npm:pi-grilling-skill",
-    "npm:pi-native-search"
+    "npm:pi-native-search",
+    "npm:pi-custom-system-prompt"
   ],
   "theme": "dark",
   "localllm": {
