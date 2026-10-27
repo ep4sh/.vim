@@ -1,7 +1,7 @@
 # --- Ornith (q4_k_m, ctx ???) ---
 llama_serve_ornith_q4() {
   if [[ -z "$1" ]]; then
-    CTX_SIZE=32768
+    CTX_SIZE=65535
   else
     CTX_SIZE="$1"
   fi
@@ -10,7 +10,7 @@ llama_serve_ornith_q4() {
              -fa on -ctk q8_0 -ctv q8_0 \
              --temperature 0.5 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -np 1 --no-ui\
+             -np 1 --no-ui --context-shift \
              --ctx_size $CTX_SIZE
 }
 
@@ -42,5 +42,6 @@ llama_serve_omnicoder() {
              --no-ui --agent --tools all --gpu-layers all -np 1 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
+             --context-shift \
              -n 1 -cb --ctx_size $CTX_SIZE
 }
