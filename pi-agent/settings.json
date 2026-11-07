@@ -6,7 +6,8 @@
   "packages": [
     "npm:pi-grilling-skill",
     "npm:pi-native-search",
-    "npm:pi-custom-system-prompt"
+    "npm:pi-custom-system-prompt",
+    "npm:pi-tasks"
   ],
   "theme": "dark",
   "localllm": {

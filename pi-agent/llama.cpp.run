@@ -8,7 +8,7 @@ llama_serve_ornith_q4() {
   echo "[llama] starting: ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M (q4_k_m, ctx $CTX_SIZE)"
   llama serve -hf ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M \
              -fa on -ctk q8_0 -ctv q8_0 \
-             --temperature 0.5 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
              -np 1 --no-ui --context-shift \
              --ctx_size $CTX_SIZE
