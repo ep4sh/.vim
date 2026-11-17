@@ -1,3 +1,20 @@
+# --- Ornith (IQ4_XS, ctx ???) ---
+llama_serve_ornith_XS() {
+  if [[ -z "$1" ]]; then
+    CTX_SIZE=65535
+  else
+    CTX_SIZE="$1"
+  fi
+  echo "[llama] starting: AtomicChat/Ornith-1.5-9B-GGUF:IQ4_XS (IQ4_XS, ctx $CTX_SIZE)"
+  llama serve -hf AtomicChat/Ornith-1.5-9B-GGUF:IQ4_XS \
+             -fa on -ctk q8_0 -ctv q8_0 \
+             --no-mmproj \
+             --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
+             --presence-penalty 0.0 --repeat-penalty 1.0 \
+             -np 1 --no-ui \
+             --ctx_size $CTX_SIZE
+}
+
 # --- Ornith (q4_k_m, ctx ???) ---
 llama_serve_ornith_q4() {
   if [[ -z "$1" ]]; then
@@ -10,7 +27,7 @@ llama_serve_ornith_q4() {
              -fa on -ctk q8_0 -ctv q8_0 \
              --temperature 0.6 --top_p 0.95 --top_k 20 --min_p 0.0 \
              --presence-penalty 0.0 --repeat-penalty 1.0 \
-             -np 1 --no-ui --context-shift \
+             -np 1 --no-ui \
              --ctx_size $CTX_SIZE
 }
 
