@@ -1,3 +1,27 @@
+llama_serve_qwen38_27b() {
+  local CTX_SIZE="${1:-262144}"
+  local REASONING="${2:-high}"
+
+  local YARN_ARGS=()
+  if (( CTX_SIZE > 262144 )); then
+    YARN_ARGS=(--rope-scaling yarn --rope-scale 4 --yarn-orig-ctx 262144)
+  fi
+
+  echo "[llama] starting: unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL (ctx: ${CTX_SIZE}, mode: ${REASONING})"
+
+  llama serve -hf "unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL" \
+             -ngl 999 \
+             -fa on -ctk q8_0 -ctv q8_0 \
+             --no-mmproj \
+             --jinja \
+             --chat-template-kwargs "{\"reasoning_effort\":\"${REASONING}\"}" \
+             --temp 0.7 --top-p 0.80 --top-k 20 --min-p 0.0 \
+             --presence-penalty 1.5 --repeat-penalty 1.0 \
+             -np 1 --no-ui \
+             "${YARN_ARGS[@]}" \
+             --ctx-size "${CTX_SIZE}"
+}
+
 # --- Ornith (IQ4_XS, ctx ???) ---
 llama_serve_ornith_XS() {
   if [[ -z "$1" ]]; then

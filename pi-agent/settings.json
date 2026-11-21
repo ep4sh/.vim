@@ -1,8 +1,8 @@
 {
-  "defaultModel": "ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M",
+  "defaultModel": "unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL",
   "defaultProvider": "llama_cpp",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "1.5.2",
+  "lastChangelogVersion": "1.6.0",
   "packages": [
     "npm:pi-grilling-skill",
     "npm:pi-native-search",
@@ -20,10 +20,10 @@
         "apiType": "openai-completions",
         "models": [
           {
-            "id": "ornith-ai/Ornith-1.5-9B-GGUF:Q4_K_M",
-            "name": "Ornith 1.5 9B (Q4_K_M)",
-            "contextWindow": 65535,
-            "maxTokens": 16384,
+            "id": "unsloth/Qwen3.8-27B-GGUF:UD-Q8_K_XL",
+            "name": "Qwen3.8-27B-GGUF:UD-Q8_K_XL",
+            "contextWindow": 262144,
+            "maxTokens": 65535,
             "reasoning": true,
             "input": [
               "text"
